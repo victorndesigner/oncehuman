@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://oncehuman.bolttexturas.site/">
+  <meta property="og:site_name" content="bolttexturas">
+  <meta property="og:title" content="Bolt Texturas">
+  <meta property="og:description" content="O maior criador de texturas está no OnceHuman!">
+  <meta property="og:image" content="https://raw.githubusercontent.com/victorndesigner/boltcalculador/main/assets/images/icon.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Banner Bolt Texturas">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/victorndesigner/boltcalculador/main/assets/images/icon.png">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/victorndesigner/boltcalculador/main/assets/images/icon.png">
+  <title>OnceHuman do Bolt</title>
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --card:#121212;
+      --purple:#8A2BE2;
+      --purple-600:#6f17c8;
+      --muted:#bfbfbf;
+      --shadow-left:rgba(0,0,0,0.6);
+      --width:420px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,Arial, sans-serif;
+      background:linear-gradient(180deg,#0a0a0a 0%, #121212 100%);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--width);
+      background:var(--card);
+      border-radius:14px;
+      padding:26px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+      text-align:center;
+    }
+
+    .avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .avatar{
+      width:110px;height:110px;border-radius:50%;
+      display:inline-grid;place-items:center;overflow:hidden;
+      background:linear-gradient(135deg,#0e0e0e,#151515);
+      position:relative;
+      border:2px solid #6f17c8;
+      transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+      }
+      .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+      .avatar:hover{
+      transform: scale(1.06);
+      filter: brightness(1.15);
+      box-shadow: 0 0 18px 4px rgba(134, 20, 255, 0.65);
+      }
+      .avatar::after{
+      content:"";
+      position:absolute;inset:0;border-radius:50%;padding:3px;
+      box-shadow:0 0 0 3px rgba(138,43,226,0.12) inset, 0 0 18px rgba(138,43,226,0.06);
+      pointer-events:none;
+    }
+
+    .name{
+      font-size:20px;font-weight:700;line-height:1;display:flex;gap:8px;align-items:center;justify-content:center;
+    }
+    .name .bolt{color:#fff}
+    .name .texturas{color:var(--purple)}
+    .typing{height:26px;display:inline-block;position:relative;overflow:hidden}
+    .cursor{width:2px;height:100%;background:var(--purple);display:inline-block;margin-left:6px;animation:blink 1s steps(2) infinite}
+    @keyframes blink{50%{opacity:0}}
+
+    .bio{color:var(--muted);font-size:13px;margin-top:6px}
+
+    .links{display:flex;flex-direction:column;gap:12px;margin-top:18px;padding:0 6px}
+    .link-btn{
+      background:var(--purple);
+      color:#fff;text-decoration:none;padding:14px 16px;border-radius:12px;
+      font-weight:600;border:none;display:flex;align-items:center;justify-content:center;gap:10px;
+      transform-origin:center left;
+      transition:transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+      box-shadow: inset 0 0 0 rgba(0,0,0,0); /* reset */
+      filter: drop-shadow(-6px 6px 0 rgba(61, 6, 107, 0.55));
+      position:relative;overflow:hidden;
+    }
+    .link-btn .label{z-index:2}
+    .link-btn::before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.25));border-top-left-radius:12px;border-bottom-left-radius:12px;opacity:0.12;
+    }
+    .link-btn:hover{filter:brightness(1.05);transform:scale(1.03)}
+    .link-btn:active{transform:scale(0.99)}
+
+    .link-sub{display:block;font-size:12px;opacity:0.9}
+
+    .socials{display:flex;gap:14px;justify-content:center;margin-top:18px}
+    .social{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:transform 140ms ease, background 140ms ease, color 140ms ease}
+    .social svg{width:20px;height:20px;fill:#fff}
+    .social:hover{transform:translateY(-4px);background:rgba(138,43,226,0.06)}
+    .social:active{transform:translateY(-2px)}
+    .social.active svg{fill:var(--purple)}
+
+    .footer{margin-top:20px;font-size:13px;color:var(--muted)}
+    .footer a{color:var(--purple);font-weight:600;text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+
+    .social {
+  position: relative;
+}
+
+    .social::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
+    }
+
+    .social:hover::after {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <div class="avatar-wrap">
+      <div class="avatar" id="avatar">
+        <img id="avatarImg" src="https://raw.githubusercontent.com/victorndesigner/boltcalculador/main/assets/images/icon.png" alt="Avatar Bolt" />
+      </div>
+      <div class="name" aria-hidden="false">
+        <div class="typing" id="typing"><span class="bolt">Bolt</span> <span class="texturas">Texturas</span></div>
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+      <div class="bio">Mundinho do bolt😌</div>
+    </div>
+
+    <div class="links" id="links">
+      <a class="link-btn" href="https://boltspecs.bolttexturas.site/" target="_blank" rel="noopener noreferrer">
+        <span class="label">Raridade das Especializações</span>
+      </a>
+      <a class="link-btn" href="https://specs.bolttexturas.site/" target="_blank" rel="noopener noreferrer">
+        <span class="label">Minhas Especializações</span>
+      </a>
+      <a class="link-btn" href="https://boltcalculador.bolttexturas.site/" target="_blank" rel="noopener noreferrer">
+        <span class="label">Calculadora de Itens</span>
+      </a>
+      <a class="link-btn" href="https://traits.bolttexturas.site/" target="_blank" rel="noopener noreferrer">
+        <span class="label">Traços de Deviants</span>
+      </a>
+      <a class="link-btn" href="#" target="_blank" rel="noopener noreferrer">
+        <span class="label">Minhas Fusões</span>
+      </a>
+    </div>
+
+    <div class="socials" aria-label="Redes sociais">
+      <a class="social" data-label="X" href="https://x.com/boltdastexturas" target="_blank" rel="noopener noreferrer" aria-label="X Twitter">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+          <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+        </svg>
+      </a>
+
+      <a class="social" data-label="YouTube" href="https://www.youtube.com/@bolttexturas/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <!-- YouTube play icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+          <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+        </svg>
+      </a>
+
+      <a class="social" data-label="TikTok" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <!-- TikTok-ish simple icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+          <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+        </svg>
+      </a>
+
+      <a class="social" data-label="Discord" href="https://discord.gg/RQkWdebu24" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+        <!-- Discord simple icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+          <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="footer">By <a href="https://www.instagram.com/victorscap_/" target="_blank" rel="noopener noreferrer">VictorScap</a></div>
+  </main>
+
+  <script>
+
+    (function(){
+      const el = document.getElementById('typing');
+      const texts = ['Bolt Texturas','Bolt Texturas'];
+      const speed = 90;
+      const pause = 900;
+      let txtIndex = 0, charIndex = 0, deleting=false;
+
+      function update(){
+        const full = texts[txtIndex];
+        if(!deleting){
+          charIndex++;
+          el.innerHTML = renderColored(full.slice(0,charIndex));
+          if(charIndex===full.length){deleting=true;setTimeout(update,pause);return}
+        }else{
+          charIndex--;
+          el.innerHTML = renderColored(full.slice(0,charIndex));
+          if(charIndex===0){deleting=false;txtIndex=(txtIndex+1)%texts.length}
+        }
+        setTimeout(update, deleting? speed/1.5 : speed);
+      }
+      function renderColored(text){
+
+        const bolt = 'Bolt';
+        const texturas = 'Texturas';
+        const parts = text.split(' ');
+        const first = parts[0]||'';
+        const second = parts.slice(1).join(' ');
+        const b = first.startsWith(bolt)? `<span class="bolt">${escapeHtml(first)}</span>` : `<span class="bolt">${escapeHtml(first)}</span>`;
+        const t = second.startsWith(texturas)? ` <span class="texturas">${escapeHtml(second)}</span>` : (second?` <span class="texturas">${escapeHtml(second)}</span>`:'');
+        return b + t;
+      }
+      function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+      update();
+    })();
+
+    document.querySelectorAll('.link-btn').forEach(btn=>{
+      btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){btn.click();e.preventDefault()}});
+    });
+
+    document.querySelectorAll('.social').forEach(s=>{
+      s.addEventListener('click',ev=>{
+
+        s.classList.add('active');
+        setTimeout(()=>s.classList.remove('active'),350);
+      });
+    });
+
+  </script>
+</body>
+</html>
